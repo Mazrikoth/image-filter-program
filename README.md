@@ -8,10 +8,10 @@ The program includes an automated **Calibration Engine** that scans a ground-tru
 
 ## 📂 Repository Architecture
 
-The repository at `X:\Image_Filter_Program` is structured as a clean, modular Python package:
+The repository at `C:\1. Coding\Image Filter Program` is structured as a clean, modular Python package:
 
 ```text
-X:\Image_Filter_Program\
+C:\1. Coding\Image Filter Program\
 ├── .venv/             # Repository-contained Python virtual environment
 ├── config.py          # Central paths, calibrated detection thresholds, and process counts
 ├── utils.py           # Robust PIL-based image loading & safe file routing
@@ -32,7 +32,7 @@ The application runs natively and stably on your host Windows CPU. To avoid impa
 Ensure your repository-contained virtual environment is active before running commands:
 ```powershell
 # Activate the repository virtual environment
-& "X:\Image_Filter_Program\.venv\Scripts\Activate.ps1"
+& "C:\1. Coding\Image Filter Program\.venv\Scripts\Activate.ps1"
 ```
 
 ---
@@ -55,7 +55,7 @@ To calibrate the engine, organize your curated control set as follows:
 ### B. Run Calibration
 Execute the Calibration Engine to run raw AI grading on all groups, evaluate prediction metrics, and automatically write optimal threshold values back to `config.py`:
 ```powershell
-python X:\Image_Filter_Program\calibration.py
+python "C:\1. Coding\Image Filter Program\calibration.py"
 ```
 
 The autotuner will output:
@@ -73,23 +73,23 @@ You can run sorting runs to route newly generated images. The program runs with 
 
 #### A. Standard Sorting (Watermark & Hand Deformity Detection)
 ```powershell
-python X:\Image_Filter_Program\main.py
+python "C:\1. Coding\Image Filter Program\main.py"
 ```
 Or to run watermark detection only:
 ```powershell
-python X:\Image_Filter_Program\main.py --watermark-only
+python "C:\1. Coding\Image Filter Program\main.py" --watermark-only
 ```
 
 #### B. Dragon Multi-Head Sorting Pass Only
 Runs a visual pass using OWL-ViT to detect and move images with 2 or more dragon heads (as they are inaccurate for portrait compositions). This is ideal for cleaning up remaining root images:
 ```powershell
-python X:\Image_Filter_Program\main.py --two-heads-only
+python "C:\1. Coding\Image Filter Program\main.py" --two-heads-only
 ```
 
 #### C. Full Combined Sorting (Watermark, Hands, & Dragon Heads)
 Runs all three checks simultaneously:
 ```powershell
-python X:\Image_Filter_Program\main.py --two-heads
+python "C:\1. Coding\Image Filter Program\main.py" --two-heads
 ```
 
 ### Routing Logic
